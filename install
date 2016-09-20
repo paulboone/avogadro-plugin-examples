@@ -5,11 +5,6 @@ import subprocess
 import sys
 
 python_required = "3.5"
-pip_required = "7.0"
-
-def _run_cmd(cmd_list):
-    results = subprocess.run(cmd_list, stdout=subprocess.PIPE, check=True, universal_newlines=True)
-    return results.stdout.strip()
 
 ###
 ### Check python version
@@ -22,11 +17,9 @@ if LooseVersion(python_version) < LooseVersion(python_required):
 ###
 ### create venv and install requirements
 print("Creating plugin-specific virtual environment...")
-_run_cmd(['python3','-m','venv','./venv'])
+subprocess.run(['python3','-m','venv','./venv'], check=True)
 print("Installing any requirements via pip...")
 subprocess.run(". ./venv/bin/activate && pip install -r ./requirements.txt", shell=True, check=True)
 print("Everything looks ok!")
 
 sys.exit(0) # success!
-
-# sys.exit(1) # fail!
