@@ -20,16 +20,9 @@ if LooseVersion(python_version) < LooseVersion(python_required):
     sys.exit(64)
 
 ###
-### Check pip is installed
-if not _run_cmd(['which', 'pip']):
-    print("pip does not appear to be installed.")
-    sys.exit(64)
-
-
-###
 ### create venv and install requirements
 print("Creating plugin-specific virtual environment...")
-_run_cmd(['python','-m','venv','./venv'])
+_run_cmd(['python3','-m','venv','./venv'])
 print("Installing any requirements via pip...")
 subprocess.run(". ./venv/bin/activate && pip install -r ./requirements.txt", shell=True, check=True)
 print("Everything looks ok!")
