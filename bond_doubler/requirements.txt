@@ -1,0 +1,2 @@
+click
+-e /home/pboone/workspace/avogadro-plugin-t1/

@@ -1,0 +1,12 @@
+{
+  "author": "Paul Boone",
+  "version": 0.1,
+  "name": "bond-doubler",
+  "url": "https://github.com/paulboone/avogadro-plugin-template",
+  "description": "This is a template plugin you can use as a starting point when designing your own plugins.",
+  "commands": [{
+      "name": "bond-doubler",
+      "command": "avogadro-plugin-python-run",
+      "args": "bond_doubler"
+  }]
+}
