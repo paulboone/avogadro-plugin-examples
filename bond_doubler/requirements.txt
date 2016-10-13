@@ -1,2 +1,2 @@
 click
--e /home/pboone/workspace/avogadro-plugin-t1/
+git+https://github.com/paulboone/avogadro-plugin.git

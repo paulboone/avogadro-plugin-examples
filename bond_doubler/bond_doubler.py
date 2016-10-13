@@ -35,12 +35,11 @@ def get_dialog_options(structure, params):
     A dictionary of the current selected structure, as well as any existing dialog parameters
     are passed in case your dialog options are context-dependent.
     """
-    options = {
-        'Scale': {
-            'type': 'integer',
-            'default': 1,
-            'minimum': 1,
-            'maximum': 5,
-        }
-    }
+    options = [{
+        'name': 'Scale',
+        'type': 'integer',
+        'default': 1,
+        'minimum': 1,
+        'maximum': 5,
+    }]
     return options
