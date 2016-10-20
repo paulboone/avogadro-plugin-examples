@@ -28,11 +28,11 @@ The file that defines how your plugin works is the plugin.json. Here is an examp
 {
   "author": "Paul Boone",
   "version": 0.1,
-  "name": "molecule-scaler",
+  "name": "molecule_scaler",
   "url": "https://github.com/paulboone/avogadro-plugin-examples",
   "description": "This is a template plugin you can use as a starting point when designing your own plugins.",
   "commands": [{
-      "name": "molecule-scaler",
+      "name": "molecule_scaler",
       "command": "avogadro-plugin-python-run",
       "args": "molecule_scaler"
   }]
