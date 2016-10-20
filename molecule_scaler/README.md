@@ -1,8 +1,8 @@
-bond_doubler
-============
+molecule_scaler
+===============
 
 This is an example python plugin using the avogadro-plugin template.
 
 See the general overview [README.md](../README.md).
 
-And look at bond_doubler.py for all the code.
+And look at molecule_scaler.py for all the code.

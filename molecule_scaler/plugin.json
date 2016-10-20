@@ -1,12 +1,12 @@
 {
   "author": "Paul Boone",
   "version": 0.1,
-  "name": "bond-doubler",
+  "name": "molecule_scaler",
   "url": "https://github.com/paulboone/avogadro-plugin-examples",
   "description": "This is a template plugin you can use as a starting point when designing your own plugins.",
   "commands": [{
-      "name": "bond-doubler",
+      "name": "molecule_scaler",
       "command": "avogadro-plugin-python-run",
-      "args": "bond_doubler"
+      "args": "molecule_scaler"
   }]
 }

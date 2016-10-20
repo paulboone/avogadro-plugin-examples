@@ -18,7 +18,7 @@ A plugin is just a directory with the following files:
 - script(s) for each command.
 - a [requirements.txt file](https://pip.pypa.io/en/stable/user_guide/#requirements-files) (optional) if your plugin depends on other python modules.
 
-See [bond doubler](./bond_doubler) for a complete example.
+See [bond doubler](./molecule_scaler) for a complete example.
 
 ### Plugin.json
 
@@ -28,13 +28,13 @@ The file that defines how your plugin works is the plugin.json. Here is an examp
 {
   "author": "Paul Boone",
   "version": 0.1,
-  "name": "bond-doubler",
+  "name": "molecule-scaler",
   "url": "https://github.com/paulboone/avogadro-plugin-examples",
   "description": "This is a template plugin you can use as a starting point when designing your own plugins.",
   "commands": [{
-      "name": "bond-doubler",
+      "name": "molecule-scaler",
       "command": "avogadro-plugin-python-run",
-      "args": "bond_doubler"
+      "args": "molecule_scaler"
   }]
 }
 ```
@@ -73,7 +73,7 @@ def run_transformation(structure, params):
 
 Both methods are passed the same arguments: structure is the currently selected molecule in avogadro, and params are the user-configured parameters setup by the interface you've defined.
 
-See the bond_doubler example for a simple and fully-worked out example!
+See the molecue_scaler example for a simple and fully-worked out example!
 
 ## Shell plugins
 
