@@ -8,10 +8,10 @@ def run_transformation(structure, params):
     results equal a dictionary of the terms to be returned across stdout.
     """
 
-    # As an example, we perform a simple (and pointless) reflect and scale operation here.
+    # As an example, we perform a simple scale operation here.
     scale = params['Scale']
     for i, coord in enumerate(structure['atoms']['coords']['3d']):
-        structure['atoms']['coords']['3d'][i] = -1 * scale * coord
+        structure['atoms']['coords']['3d'][i] = scale * coord
 
     # put together result information
     # note that you can return a message for display, if there was a result to report or an error.
