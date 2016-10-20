@@ -1,15 +1,8 @@
-This repository holds example avogadro plugins you can use as a starting point to create your own
-plugins.
+bond_doubler
+============
 
-Requires Python 3.5+
+This is an example python plugin using the avogadro-plugin template.
 
-To test:
+See the general overview [README.md](../README.md).
 
-```
-pip install -r requirements.txt
-
-./install
-./run --help
-./run --print-dialog < examples/ethane.json
-./run < examples/ethane.json
-```
+And look at bond_doubler.py for all the code.
