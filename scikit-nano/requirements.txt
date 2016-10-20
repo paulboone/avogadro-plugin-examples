@@ -1,0 +1,3 @@
+git+https://github.com/paulboone/avogadro-plugin.git
+numpy
+scikit-nano
