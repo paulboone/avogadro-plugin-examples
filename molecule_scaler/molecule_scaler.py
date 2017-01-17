@@ -1,4 +1,6 @@
 
+from avogadro_plugin import avogadro_plugin_call
+
 def run_transformation(structure, params):
     """
     This method performs a transformation on the currently selected structure in avoagadro, using
@@ -43,3 +45,10 @@ def get_dialog_options(structure, params):
         'maximum': 5,
     }]
     return options
+
+avogadro_plugin_call(
+    method_name="Molecular Scaler",
+    run_workflow_method=run_transformation,
+    print_options_method=get_dialog_options,
+    menu_path="&extensions"
+)
