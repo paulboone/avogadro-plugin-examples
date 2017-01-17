@@ -26,9 +26,8 @@ for command in plugin_json['commands']:
     results_json = json.loads(stdout)
     print(results_json)
 
-    options = { opt['name']:opt['default'] for opt in results_json }
+    options = { opt['key']:opt['default'] for opt in results_json }
     molecule_json['options'] = options
-
     full_cmd = "python %s --run-workflow" % (command['command'])
     print("\n\n%s: " % full_cmd)
     proc = subprocess.Popen([full_cmd], shell=True, stdin=PIPE, universal_newlines=True)
