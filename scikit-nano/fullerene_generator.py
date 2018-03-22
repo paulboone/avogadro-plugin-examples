@@ -1,5 +1,5 @@
+from avogadro_plugin import avogadro_plugin_call
 
-from avogadro_plugin.utils import extrapolate_bonds
 from sknano.generators import FullereneGenerator
 
 def run_transformation(structure, params):
@@ -16,7 +16,6 @@ def run_transformation(structure, params):
     structure["atoms"]["elements"]["number"] =  [ a.Z for a in fg.atoms ]
     structure["atoms"]["coords"]["3d"] = [ c for a in fg.atoms for c in (a.x, a.y, a.z) ]
     atoms = [ (a.x, a.y, a.z, a.Z) for a in fg.atoms ]
-    structure["bonds"]["connections"]["index"] = extrapolate_bonds(atoms)
 
     # put together result information
     # note that you can return a message for display, if there was a result to report or an error.
@@ -41,10 +40,20 @@ def get_dialog_options(structure, params):
     are passed in case your dialog options are context-dependent.
     """
     options = [{
-        'name': 'N',
+        'key': 'N',
+        'label': 'N',
+        'tooltip': 'size of fullerene',
         'type': 'integer',
         'default': 20,
         'minimum': 20,
         'maximum': 100,
     }]
     return options
+
+
+avogadro_plugin_call(
+    method_name="Fullerne Generator",
+    run_workflow_method=run_transformation,
+    print_options_method=get_dialog_options,
+    menu_path="&extensions"
+)

@@ -1,5 +1,7 @@
 
-def run_transformation(structure, params):
+from avogadro_plugin import avogadro_plugin_call
+
+def run_transformation(structure, options):
     """
     This method performs a transformation on the currently selected structure in avoagadro, using
     any passed dialog parameters as needed.
@@ -9,7 +11,7 @@ def run_transformation(structure, params):
     """
 
     # As an example, we perform a simple scale operation here.
-    scale = params['Scale']
+    scale = options['scale']
     for i, coord in enumerate(structure['atoms']['coords']['3d']):
         structure['atoms']['coords']['3d'][i] = scale * coord
 
@@ -36,10 +38,19 @@ def get_dialog_options(structure, params):
     are passed in case your dialog options are context-dependent.
     """
     options = [{
-        'name': 'Scale',
+        'key': 'scale',
+        'label': 'Scale',
+        'tooltip': 'Multiplier to scale all positions by',
         'type': 'integer',
         'default': 1,
         'minimum': 1,
         'maximum': 5,
     }]
     return options
+
+avogadro_plugin_call(
+    method_name="Molecular Scaler",
+    run_workflow_method=run_transformation,
+    print_options_method=get_dialog_options,
+    menu_path="&extensions"
+)

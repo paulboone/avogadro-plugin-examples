@@ -19,17 +19,16 @@ molecule_json = json.load(sys.stdin)
 
 for command in plugin_json['commands']:
 
-    full_cmd = "%s %s --print-dialog" % (command['command'], command['args'])
+    full_cmd = "python %s --print-options" % (command['command'])
     print("\n\n%s: " % full_cmd)
     proc = subprocess.Popen([full_cmd], shell=True, stdin=PIPE, stdout=PIPE, universal_newlines=True)
     stdout, stderr = proc.communicate(input=json.dumps(molecule_json))
     results_json = json.loads(stdout)
     print(results_json)
 
-    options = { opt['name']:opt['default'] for opt in results_json }
+    options = { opt['key']:opt['default'] for opt in results_json }
     molecule_json['options'] = options
-
-    full_cmd = "%s %s --run-transformation" % (command['command'], command['args'])
+    full_cmd = "python %s --run-workflow" % (command['command'])
     print("\n\n%s: " % full_cmd)
     proc = subprocess.Popen([full_cmd], shell=True, stdin=PIPE, universal_newlines=True)
     proc.communicate(input=json.dumps(molecule_json))

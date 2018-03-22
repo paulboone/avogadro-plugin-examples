@@ -6,7 +6,6 @@
   "description": "This is a template plugin you can use as a starting point when designing your own plugins.",
   "commands": [{
       "name": "Generate Fullerene",
-      "command": "avogadro-plugin-python-run",
-      "args": "fullerene_generator"
+      "command": "fullerene_generator.py"
   }]
 }
