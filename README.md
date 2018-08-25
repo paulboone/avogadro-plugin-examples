@@ -1,5 +1,7 @@
 # Avogadro Plugin Examples
 
+DEPRECATED => These examples will not precisely work in Avogadro 2.0; please see examples in Avogadro 2.0 source code.
+
 This repository holds templates you can use to create your own python plugins for avogadro.
 
 At a high-level, a plugin contains:
